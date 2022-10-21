@@ -10,35 +10,36 @@ const Header = ({tasks, setTasks}) => {
     });
 
 
-    const handleShow = () =>{
-        if(show){
-            setBtnStyle({
-                name: 'SHOW ADD TASK BAR',
-                bgColor: 'purple', 
-            })
-        }else{
-            setBtnStyle({
-                name: 'CLOSE ADD TASK BAR',
-                bgColor: 'red',  
-            });
-        };
+    const handleShow = () => {
+        if (show) {
+          setBtnStyle({
+            name: 'SHOW ADD TASK BAR',
+            bgColor: 'purple',
+          });
+        } else {
+          setBtnStyle({
+            name: 'CLOSE ADD TASK BAR',
+            bgColor: 'red',
+          });
+        }
         setShow(!show);
-    };
-    console.log(show);
-
-  return (
-    <header className="header">
-        <h1>TASK TRACKER</h1>
-        <button 
-        onClick={handleShow} 
-        className="btn"
-        style={{backgroundColor: btnStyle.bgColor}}>
+      };
+      console.log(show);
+    
+      return (
+        <header className="header">
+          <h1>TASK TRACKER</h1>
+          <button
+            onClick={handleShow}
+            className="btn"
+            style={{ backgroundColor: btnStyle.bgColor }}
+          >
             {btnStyle.name}
-        
-        </button>
-        {show && <AddTaskForm tasks={tasks} setTasks={setTasks} />}
-    </header>
-  );
-};
-
-export default Header;
+          </button>
+          {show && <AddTaskForm tasks={tasks} setTasks={setTasks} />}
+        </header>
+      );
+    };
+    
+    export default Header;
+    
